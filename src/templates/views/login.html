@@ -1,0 +1,51 @@
+{% extends "../base/base.html" %}
+
+{% block content %}
+
+<div class="container min-h-screen w-full flex flex-col justify-center items-center">
+    <div class="flex flex-row items-center justify-center space-x-12">
+
+        <!-- Title part -->
+        <div class="w-2/4">
+            <h1 class="text-white text-6xl">DMZR Cos Bucket Explorer</h1>
+        </div>
+
+        <!-- Login part -->
+        <div class="bg-white rounded-md shadow-xl p-10">
+            <!-- Header login -->
+            <h2 class="text-2xl font-bold mb-6 text-center">Login to your account</h2>
+            
+            <form method="post" action="/login/" class="space-y-6">
+                {% csrf_token %}
+                <!-- Username -->
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username"
+                        class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        required>
+                </div>
+            
+                <!-- Password -->
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password"
+                        class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        required>
+                </div>
+            
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                        Login
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
